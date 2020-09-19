@@ -1,9 +1,10 @@
 import {useEffect, useRef, useState} from "react";
 
+// https://stackoverflow.com/questions/55326406/react-hooks-value-is-not-accessible-in-event-listener-function
+// https://dmitripavlutin.com/react-hooks-stale-closures/
 export default function useWillComponentBeVisible(domRef, initialValue = true, onUnMount){
 	const [spaceAvailable, setSpaceAvailable] = useState(initialValue);
-	// todo: figure out why stateValue is sometimes not updating
-	// temp solution: store the value in ref
+
 	const spaceAvailableRef = useRef(spaceAvailable);
 
 	useEffect(()=>{
@@ -17,21 +18,18 @@ export default function useWillComponentBeVisible(domRef, initialValue = true, o
 		}
 	},[]);
 
-	function isSpaceAvailable(){
-		const domElement = domRef.current;
-		const domRect = domElement.getBoundingClientRect();
-		const possibleDomBottomPosition = spaceAvailableRef.current ?  domRect.bottom : (domRect.bottom + domRect.height);
-		const windowInnerHeight = window.innerHeight;
-		return (windowInnerHeight >= possibleDomBottomPosition)
-	}
-
 	function renderUpIfNoSpace(){
-		const oldValue = spaceAvailableRef.current;
-		const newValue = isSpaceAvailable();
-		if(oldValue !== newValue){
-			setSpaceAvailable(newValue);
+		setSpaceAvailable((prevValue)=>{
+			const domElement = domRef.current;
+			const domRect = domElement.getBoundingClientRect();
+			const possibleDomBottomPosition = prevValue ?  domRect.bottom : (domRect.bottom + domRect.height);
+			const windowInnerHeight = window.innerHeight;
+
+			const newValue = (windowInnerHeight >= possibleDomBottomPosition);
 			spaceAvailableRef.current = newValue;
-		}
+
+			return newValue;
+		});
 	}
 
 	return spaceAvailable;
