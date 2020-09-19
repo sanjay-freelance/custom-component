@@ -1,0 +1,12 @@
+input {
+  border: 1px solid grey;
+  margin: 8px;
+  padding:4px;
+  min-width: 200px;
+  display: block;
+}
+
+.dropSide {
+  margin: 8px;
+  width: 200px;
+}
