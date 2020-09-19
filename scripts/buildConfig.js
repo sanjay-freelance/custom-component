@@ -14,11 +14,6 @@ var config = {
       "sourceDir":null,
       "sourceFiles": null,
       "destinationDir":null
-    },
-    "other":{
-      "sourceDir":'static',
-      "sourceFiles": null,
-      "destinationDir":'dist/static'
     }
   }
 };
