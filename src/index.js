@@ -67,7 +67,9 @@ function FormApp(){
 		<input type='search'/>
 		<input type='search'/>
 		<input type='search'/>
-		<DropSide options={options} label='Select Country'/>
+		<DropSide options={options}
+							placeHolder='Country'
+							label='Select Country'/>
 	</div>
 	)
 }

@@ -4,6 +4,7 @@
   padding: 8px;
   width: inherit;
   background: white;
+  z-index: 1;
 }
 
 .dropSide-custom-select-arrow{

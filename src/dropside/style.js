@@ -12,6 +12,12 @@ const selectStyle = {
 	display: 'none'
 };
 
+const customSelectPopUpState = {
+	borderTopRightRadius: "0px",
+	borderBottomRightRadius: "0px",
+	borderRight: "none"
+}
+
 const arrowButtonStyle = {
 	display: 'flex', /* Important so that child arrow inside have the width matching content */
 	position: 'absolute',
@@ -22,7 +28,7 @@ const arrowButtonStyle = {
 	background: 'none',
 	border: 'none',
 	outline: 'none',
-	zIndex: 1 /* Important to cover the border of div select and popup */
+	zIndex: 1
 };
 
 const popUpWrapperStyle = {
@@ -35,12 +41,13 @@ const popUpStyle = {
 	display: 'flex',
 	flexDirection: 'column',
 	top: '-40px',
-	left: "-4px"
+	left: "-1px"
 };
 
 export {
 	dropSideContainerStyle,
 	selectStyle,
+	customSelectPopUpState,
 	arrowButtonStyle,
 	popUpWrapperStyle,
 	popUpStyle
