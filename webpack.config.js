@@ -27,6 +27,10 @@ const config = {
 				use: ['style-loader', 'css-loader']
 			},
 			{
+				test: /\.svg$/,
+				use: ['@svgr/webpack'],
+			},
+			{
 				test: /\.csv$/,
 				use: {
 					loader: "csv-loader",

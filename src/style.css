@@ -10,3 +10,44 @@ input {
   margin: 8px;
   width: 200px;
 }
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 24px;
+  height: 100%;
+  color: white;
+}
+
+.sidebar-min-content {
+  transform-origin: left;
+  transform: rotate(90deg);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.company-info{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: small;
+}
+
+.logo {
+  background-color: white;
+  padding: 4px;
+  color: black;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.empty-div {
+  height: 24px;
+}
+
+
+
+
