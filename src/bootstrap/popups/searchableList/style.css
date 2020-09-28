@@ -1,0 +1,19 @@
+.searchable-list{
+  max-height: 180px;
+  overflow: auto;
+  padding: 0;
+  margin: 1rem 0rem;
+}
+
+.searchable-list .dropdown-item {
+  text-transform: none;
+  color: black;
+}
+
+.searchable-list-input{
+  display: flex;
+  flex-direction: inherit;
+  padding: .25rem 1.5rem;
+}
+
+

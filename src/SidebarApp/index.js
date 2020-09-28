@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from "react";
+import React, {useState, useRef} from "react";
 import './style.css';
 import didClickedOutside from "hooks/didClickedOutside";
 
@@ -30,14 +30,12 @@ export default function SidebarApp(props){
 		if(!expandSidebar){
 			setShowIcons(true);
 		}
-
 	}
 
 	const sideBarExpandStyle = expandSidebar ? expandStyle : null;
 	const sideBarOverlayStyle = expandSidebar ? overlayStyle : null;
 	const sidebarContent = expandSidebar ? content : null;
 
-	console.log(showIcons)
 	const sidebarIconContent = !expandSidebar && showIcons ? (
 		<div className='sidebar-icon-holder-container'>
 			<div className='sidebar-icon-holder'>{iconContent}</div>
@@ -59,7 +57,6 @@ export default function SidebarApp(props){
 		</div>
 		<div className='sidebar-app'>
 			{children}
-
 		</div>
 	</div>
 	)

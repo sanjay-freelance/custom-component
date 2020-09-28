@@ -48,6 +48,51 @@ const options = [
 	}
 ];
 
+
+function App(){
+	return (
+	<>
+		<Navbar bg="light" expand="lg">
+			<Navbar.Brand href="#home">CORE</Navbar.Brand>
+			<Navbar.Toggle aria-controls="basic-navbar-nav" />
+			<Navbar.Collapse id="basic-navbar-nav">
+				<Nav className="mr-auto">
+					<Nav.Link href="#home">Home</Nav.Link>
+					<Nav.Link href="#link">Dashboard</Nav.Link>
+				</Nav>
+				<IconDropDown>
+					<UserPopover name="Sanjay" role="Admin"/>
+				</IconDropDown>
+
+				<IconDropDown>
+					<UserPopover name="Sanjay" role="Admin"/>
+				</IconDropDown>
+
+			</Navbar.Collapse>
+		</Navbar>
+
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<DropSide options={options} label='Select Country'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<input type='search'/>
+		<DropSide options={options}
+							placeholder='Select Country'
+							label='Select Country'/>
+		<input type='search'/>
+		</>
+	)
+}
+
 function FormApp(){
 
 	const sideBarMinContent = (<span className='sidebar-min-content'>CORE</span>)
@@ -77,39 +122,7 @@ function FormApp(){
 	return (
 	<Sidebar content={sideBarExpandedContent}
 					 iconContent={sideBarMinContent}>
-		<Navbar bg="light" expand="lg">
-			<Navbar.Brand href="#home">CORE</Navbar.Brand>
-			<Navbar.Toggle aria-controls="basic-navbar-nav" />
-			<Navbar.Collapse id="basic-navbar-nav">
-				<Nav className="mr-auto">
-					<Nav.Link href="#home">Home</Nav.Link>
-					<Nav.Link href="#link">Dashboard</Nav.Link>
-				</Nav>
-				<IconDropDown>
-					<UserPopover name="Sanjay" role="Admin"/>
-				</IconDropDown>
-
-			</Navbar.Collapse>
-		</Navbar>
-
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<DropSide options={options} label='Select Country'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<input type='search'/>
-		<DropSide options={options}
-							placeHolder='Country'
-							label='Select Country'/>
-		<input type='search'/>
+				<App/>
 	</Sidebar>
 	)
 }

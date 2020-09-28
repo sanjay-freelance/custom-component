@@ -1,14 +1,17 @@
 import React, {useState, useRef, useEffect} from "react";
+import {Dropdown} from 'react-bootstrap'
 import useDidClickedOutside from "hooks/useDidClickedOutside";
 import {dropSideContainerStyle, popUpWrapperStyle, customSelectPopUpState} from './style';
 import Popup from './Popup';
 import Arrow from './Arrow';
 import HiddenSelect from './HiddenSelect';
+import SearchableList from "../bootstrap/popups/searchableList";
+import './style.css';
 
 
 //todo: support merging classname and Style from props
-export default function DropSide(props){
-	const {defaultValue, onchange, options, placeHolder, label} = props;
+export default function DropSideList(props){
+	const {defaultValue, onchange, options, placeholder, label} = props;
 	const [value, setValue] = useState(defaultValue);
 	const [showPopUp, setShowPopUp] = useState(false);
 	const dropUpRef = useRef();
@@ -36,17 +39,20 @@ export default function DropSide(props){
 		setShowPopUp(false)
 	}
 
-	const selectedValue = value ? value : (placeHolder ?  placeHolder : 'Select');
+	const selectedValue = value ? value : (placeholder ?  placeholder : 'Select');
 	const popUpUI = showPopUp ? <Popup options={options}
-																		 label={label}
 																		 renderDown={dropUpRef.current}
-																		 onClose={popUpCloseHandler}
-																		 onSelect={handleSelect}/> : null;
+																		 onClose={popUpCloseHandler}>
+		<SearchableList options={options}
+										onSelect={handleSelect}
+										placeholder={placeholder}
+										label={label}/>
+	</Popup>: null;
 
 	const customSelectStyle = showPopUp ? customSelectPopUpState : null;
 
 	return(
-	<div className='dropSide'
+	<Dropdown className='dropSide'
 			 ref={domRef}
 			 style={dropSideContainerStyle}>
 		<HiddenSelect options={options}
@@ -61,7 +67,7 @@ export default function DropSide(props){
 		<div style={popUpWrapperStyle}>
 			{popUpUI}
 		</div>
-	</div>
+	</Dropdown>
 	)
 }
 
