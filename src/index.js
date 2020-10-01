@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import DropSide from "./dropside";
+import {DropSideList ,DropSideCalendar}from "./dropside";
 import IconDropDown from "./iconDropdown";
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import UserPopover from './bootstrap/userPopover';
@@ -75,7 +75,7 @@ function App(){
 		<input type='search'/>
 		<input type='search'/>
 		<input type='search'/>
-		<DropSide options={options} label='Select Country'/>
+		<DropSideList options={options} label='Select Country'/>
 		<input type='search'/>
 		<input type='search'/>
 		<input type='search'/>
@@ -85,9 +85,7 @@ function App(){
 		<input type='search'/>
 		<input type='search'/>
 		<input type='search'/>
-		<DropSide options={options}
-							placeholder='Select Country'
-							label='Select Country'/>
+		<DropSideCalendar />
 		<input type='search'/>
 		</>
 	)

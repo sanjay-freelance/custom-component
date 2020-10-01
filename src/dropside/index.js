@@ -1,5 +1,7 @@
 import DropSideList from './dropSideList';
+import DropSideCalendar from './dropSideCalendar';
 
 export {
-	DropSideList as default
+	DropSideList,
+	DropSideCalendar
 }
